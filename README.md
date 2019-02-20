@@ -24,7 +24,7 @@ Though this project is an `addon` type for including a component in your Ember p
 
 ````
 git clone git@github.com:mysterlune/ember-pdfjs.git
-cd ember-pdfjs && npm install && bower install
+cd ember-pdfjs && npm install
 ember serve
 ````
 

@@ -1,18 +1,10 @@
-/*jshint node:true*/
-/* global require, module */
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+/* eslint-env node */
+'use strict';
+
+let EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
-  var app = new EmberAddon(defaults, {
-    minifyJS: {
-      options: {
-        exclude: ["**/pdf.worker.js"]
-      }
-    },
-    babel: {
-      ignore: ['pdf.js', 'pdf.worker.js']
-    }
-  });
+  var app = new EmberAddon(defaults, {});
 
   /*
     This build file specifies the options for the dummy test app of this
