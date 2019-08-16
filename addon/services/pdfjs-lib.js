@@ -1,18 +1,17 @@
 /* global PDFJS */
 import Ember from 'ember';
 
-const { getOwner, Service } = Ember;
+const { Service } = Ember;
 
 export default Service.extend({
   pdfLib: undefined,
   init () {
     this._super(...arguments);
 
-    let appConfig = getOwner(this).resolveRegistration('config:environment');
-
-    let addonConfig = appConfig.emberPdfjs;
-
     this.PDFJS = PDFJS;
-    this.PDFJS.workerSrc = addonConfig.workerSrc;
+
+    // hardcoding as reading from env does not pick up
+    // fingerprinted version for some reason.
+    this.PDFJS.workerSrc = '/pdf.worker.js';
   }
 });
